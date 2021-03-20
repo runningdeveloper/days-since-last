@@ -1,5 +1,5 @@
 (async function() {
-const activities = await fetch('/last-activities.json').then(response => response.json())
+const activities = await fetch('./last-activities.json').then(response => response.json())
 const type = document.getElementById('days').dataset.activity
 const last = activities.find(a=>a.type===type)
 if(last){

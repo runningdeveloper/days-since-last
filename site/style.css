@@ -6,7 +6,7 @@
   font-family: "DSEG";
   font-weight: 600;
   font-display: swap;
-  src: url(/DSEG7Classic-Bold.woff2) format("woff2");
+  src: url(./DSEG7Classic-Bold.woff2) format("woff2");
 }
 
 body {
