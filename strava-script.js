@@ -3,6 +3,11 @@ const jsonfile = require("jsonfile");
 
 require("dotenv").config({ path: __dirname + "/.env" });
 
+if(!process.env.STRAVA_CLIENT_ID){
+    console.error('no strava env')
+    return
+}
+
 strava.config({
   access_token: "blank",
   client_id: process.env.STRAVA_CLIENT_ID,
