@@ -1,0 +1,26 @@
+{
+  "name": "days-since-last",
+  "version": "1.0.0",
+  "description": "",
+  "main": "strava-script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd site && eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/runningdeveloper/days-since-last.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/runningdeveloper/days-since-last/issues"
+  },
+  "homepage": "https://github.com/runningdeveloper/days-since-last#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "dotenv": "^8.2.0",
+    "jsonfile": "^6.1.0",
+    "strava-v3": "^2.0.9"
+  }
+}
