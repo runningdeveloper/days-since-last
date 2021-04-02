@@ -1,6 +1,6 @@
 const strava = require("strava-v3");
 const jsonfile = require("jsonfile");
-const dataFile = './_data/last-activities.json'
+const dataFile = './site/_data/last-activities.json'
 
 require("dotenv").config({ path: __dirname + "/.env" });
 
@@ -67,7 +67,6 @@ const getLastActivities = async () => {
   // I want to write if its a new activity or its a different activity type
   try {
     const existing = await jsonfile.readFile(dataFile);
-    console.log('thing')
     const sameType = existing.find((a) => a.type === type);
     if (sameType && sameType.id !== id) {
       // so now we know its a new activity of same type
