@@ -5,7 +5,9 @@
   "main": "strava-script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cd site && eleventy"
+    "build": "cd site && eleventy",
+    "start": "cd site && eleventy --serve",
+    "debug": "cd site && DEBUG=Eleventy* eleventy --serve"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,7 @@
   "homepage": "https://github.com/runningdeveloper/days-since-last#readme",
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
+    "date-fns": "^2.19.0",
     "dotenv": "^8.2.0",
     "jsonfile": "^6.1.0",
     "strava-v3": "^2.0.9"

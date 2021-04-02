@@ -1,43 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script async src="app.js"></script>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <title>Days Since Last {{ site.activity }}</title>
-  </head>
-  <body>
-    <main>
-      <h1 class="title">
-        <span class="title1">
-          <span class="day-background">888</span>
-        </span>
-        <span class="title2">
-          <span id="days" data-activity="{{ site.activity }}">000</span>
-        </span>
-        <span class="title3">DAYS</span>
-        <span class="title4">SINCE LAST {{ site.activity | upcase}}</span>
-      </h1>
-      <p>
-        Like at a mine or factory, except this is about exercise and lower is
-        better.
-      </p>
-      <a
-        id="strava-link"
-        href="https://www.strava.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        >See the Strava Entry</a
-      >
-    </main>
+---
+title: "Days since last run"
+description: "Simply showing the days since my last run. Like at a mine or factory, except this is about exercise and lower is better."
+---
 
-    {% include footer %}
-  </body>
-</html>
+{% include activity %}
