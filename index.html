@@ -1,17 +1,29 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script async src="app.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap"
       rel="stylesheet"
     />
-    <title>Days Since Last Run</title>
+
+    
+    <title>Days since last run</title>
+     
+    <title>Simply showing the days since my last run. Like at a mine or factory, except this is about exercise and lower is better.</title>
+       
+
+    <script>
+      const color = 0 <= 1 ? '#03ba0c':'#ea1d0d'
+      document.documentElement.style.setProperty(
+       '--number-color', color
+      );
+    </script>
   </head>
   <body>
     <main>
@@ -20,7 +32,7 @@
           <span class="day-background">888</span>
         </span>
         <span class="title2">
-          <span id="days" data-activity="Run">000</span>
+          <span id="days">000</span>
         </span>
         <span class="title3">DAYS</span>
         <span class="title4">SINCE LAST RUN</span>
@@ -29,12 +41,14 @@
         Like at a mine or factory, except this is about exercise and lower is
         better.
       </p>
+
       <a
         id="strava-link"
-        href="https://www.strava.com"
+        href="https://www.strava.com/activities/5055185672"
         target="_blank"
         rel="noopener noreferrer"
-        >See the Strava Entry</a
+        >Last run on
+        Fri  2 April</a
       >
     </main>
 

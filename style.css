@@ -1,3 +1,7 @@
+:root {
+  --number-color: #ea1d0d;
+ }
+
 * {
   box-sizing: border-box;
 }
@@ -69,7 +73,7 @@ h1 {
   padding: 1rem;
   border: 2px solid black;
   border-radius: 0.1rem;
-  color: #ea1d0d;
+  color: var(--number-color);
 }
 
 @media screen and (max-width: 600px) {
