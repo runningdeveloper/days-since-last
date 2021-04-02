@@ -27,6 +27,8 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
+      - run: npm ci
+
       - run: node .
         env:
           STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
@@ -37,7 +39,6 @@ jobs:
         with:
           commit_message: Updated activity list
 
-      - run: npm ci
       - run: npm run build --if-present
       
       - name: Deploy
