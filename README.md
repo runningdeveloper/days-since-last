@@ -2,7 +2,7 @@
 
 __I wanted a page that tells me when I last ran.__
 
-I am always trying to find ways to motivate me to get out and run. Making this webpage open on a new tab page might help me. Also if its very public and open family/friends could quickly nag me about how long it's been since I ran.
+I am always trying to find ways to motivate myself to get out and run. Making this webpage open on a new tab page might help me. Also if its very public and open family/friends could quickly nag me about how long it's been since I ran.
 
 This is inspired by those boards you see at mines or factories with DAYS SINCE LAST INJURY.
 
