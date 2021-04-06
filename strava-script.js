@@ -71,7 +71,7 @@ const getLastActivities = async () => {
     if (sameType && sameType.id !== id) {
       // so now we know its a new activity of same type
       jsonfile.writeFileSync(dataFile, [
-        ...existing.filter((a) => a.id !== id),
+        ...existing.filter((a) => a.type !== type),
         activity,
       ]);
       return;
