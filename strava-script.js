@@ -75,7 +75,7 @@ const getLastActivities = async () => {
         activity,
       ]);
       return;
-    } else if (sameType.id !== id) {
+    } else if (!sameType) {
       // its a new type yay not just running
       jsonfile.writeFileSync(dataFile, [
         ...existing,
@@ -88,6 +88,7 @@ const getLastActivities = async () => {
     }
   } catch (error) {
     // no worries no file yet
+    console.error('processing file error', error)
     jsonfile.writeFileSync(dataFile, [activity]);
   }
   return;
