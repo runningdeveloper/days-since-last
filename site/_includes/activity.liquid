@@ -56,6 +56,24 @@
         >Last {{ activity.type | downcase }} on
         {{ activity.start_date | date: "%a %e %B" }}</a
       >
+
+      <h3>Other</h3>
+      <ul>
+        {%- for act in last-activities -%} {% unless act.type == activity.type
+        %}
+        <li>
+          {{ act.start_date | daysDiff | paddZeros }} days since last
+          {{ act.type }} (<a
+            id="strava-link"
+            href="https://www.strava.com/activities/{{ act.id }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            >{{ act.start_date | date: "%a %e %B" }}</a
+          >)
+        </li>
+
+        {% endunless %} {%- endfor -%}
+      </ul>
     </main>
 
     {% include footer %}
