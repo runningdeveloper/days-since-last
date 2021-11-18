@@ -4,10 +4,7 @@
   "description": "",
   "main": "strava-script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cd site && eleventy",
-    "start": "cd site && eleventy --serve",
-    "debug": "cd site && DEBUG=Eleventy* eleventy --serve"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

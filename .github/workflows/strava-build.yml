@@ -39,10 +39,12 @@ jobs:
         with:
           commit_message: Updated activity list
 
-      - run: npm run build --if-present
+      - run: cd website
+      - run: npm ci
+      - run: npm run build
       
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./website/dist
