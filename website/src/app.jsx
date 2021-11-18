@@ -3,6 +3,8 @@ import { useEffect, useState } from "preact/hooks";
 import differenceInCalendarDays from "date-fns/differenceInCalendarDays";
 import format from "date-fns/format";
 
+const defaultActivity = import.meta.env.VITE_DEFAULT_ACTIVITY??'Run'
+
 export function App(props) {
   const [activities, setActivities] = useState(null);
 
@@ -51,7 +53,7 @@ export function App(props) {
           </span>
           <span class="title3">DAYS</span>
           <span class="title4">
-            SINCE LAST {import.meta.env.VITE_DEFAULT_ACTIVITY.toUpperCase()}
+            SINCE LAST {defaultActivity.toUpperCase()}
           </span>
         </h1>
         <p>
@@ -65,7 +67,7 @@ export function App(props) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Last {import.meta.env.VITE_DEFAULT_ACTIVITY} on{" "}
+          Last {defaultActivity} on{" "}
           {last && format(new Date(last?.start_date), "PPPP")}
           {/* {{ activity.start_date | date: "%a %e %B" }} */}
         </a>
@@ -74,7 +76,7 @@ export function App(props) {
         {activities && (
           <ul>
             {activities
-              .filter((a) => a.type !== import.meta.env.VITE_DEFAULT_ACTIVITY)
+              .filter((a) => a.type !== defaultActivity)
               .map((act) => (
                 <li>
                   {days(act)} days since last {act.type} (
