@@ -20,7 +20,7 @@ export function App(props) {
   }, []);
 
   const last = activities?.find(
-    (a) => a.type === import.meta.env.VITE_DEFAULT_ACTIVITY
+    (a) => a.type === defaultActivity
   );
 
   const pad = (days) =>
