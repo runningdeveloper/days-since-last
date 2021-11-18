@@ -39,9 +39,7 @@ jobs:
         with:
           commit_message: Updated activity list
 
-      - run: cd website
-      - run: npm ci
-      - run: npm run build
+      - run: npm run website-build
       
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
