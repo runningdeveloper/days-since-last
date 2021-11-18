@@ -1,6 +1,6 @@
 const strava = require("strava-v3");
 const jsonfile = require("jsonfile");
-const dataFile = './website/last-activities.json'
+const dataFile = './website/public/last-activities.json'
 
 require("dotenv").config({ path: __dirname + "/.env" });
 
