@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build-github": "vite build --base=/days-since-last/",
     "serve": "vite preview"
   },
   "dependencies": {

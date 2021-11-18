@@ -5,7 +5,7 @@
   "main": "strava-script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "website-build": "cd website && npm ci && npm run build --base=/days-since-last/"
+    "website-build": "cd website && npm ci && npm run build-github"
   },
   "repository": {
     "type": "git",
