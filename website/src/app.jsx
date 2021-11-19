@@ -3,7 +3,7 @@ import { useEffect, useState } from "preact/hooks";
 import differenceInCalendarDays from "date-fns/differenceInCalendarDays";
 import format from "date-fns/format";
 
-const defaultActivity = import.meta.env.VITE_DEFAULT_ACTIVITY??'Run'
+const defaultActivity = import.meta.env.VITE_DEFAULT_ACTIVITY ?? "Run";
 
 export function App(props) {
   const [activities, setActivities] = useState(null);
@@ -19,9 +19,7 @@ export function App(props) {
     }
   }, []);
 
-  const last = activities?.find(
-    (a) => a.type === defaultActivity
-  );
+  const last = activities?.find((a) => a.type === defaultActivity);
 
   const pad = (days) =>
     days < 1000 ? days.toString().padStart(3, "0") : "Err";
@@ -36,6 +34,16 @@ export function App(props) {
         )
       : "---";
 
+  const color = (activity) =>
+    activity
+      ? differenceInCalendarDays(
+          new Date(),
+          new Date(activity.start_date_local)
+        ) <= 1
+        ? "#03ba0c"
+        : "#ea1d0d"
+      : "#ea1d0d";
+
   return (
     <>
       <main>
@@ -44,17 +52,12 @@ export function App(props) {
             <span class="day-background">888</span>
           </span>
           <span class="title2">
-            <span id="days">
+            <span id="days" style={{ "--number-color": color(last) }}>
               {days(last)}
-              {/* {{
-            activity.start_date | daysDiff | paddZeros
-          }} */}
             </span>
           </span>
           <span class="title3">DAYS</span>
-          <span class="title4">
-            SINCE LAST {defaultActivity.toUpperCase()}
-          </span>
+          <span class="title4">SINCE LAST {defaultActivity.toUpperCase()}</span>
         </h1>
         <p>
           Like at a mine or factory sign, except this is about exercise and
@@ -63,13 +66,12 @@ export function App(props) {
 
         <a
           id="strava-link"
-          href="https://www.strava.com/activities/{{ activity.id }}"
+          href={`https://www.strava.com/activities/${last?.id}`}
           target="_blank"
           rel="noopener noreferrer"
         >
           Last {defaultActivity} on{" "}
           {last && format(new Date(last?.start_date), "PPPP")}
-          {/* {{ activity.start_date | date: "%a %e %B" }} */}
         </a>
 
         <h3>Other</h3>
