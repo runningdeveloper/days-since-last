@@ -10,10 +10,14 @@ export function App(props) {
 
   useEffect(async () => {
     try {
+      // const myActivities = await fetch(
+      //   "https://runningdeveloper.github.io/days-since-last/last-activities.json"
+      // ).then((response) => response.json());
+      // setActivities(myActivities);
       const myActivities = await fetch(
-        "https://runningdeveloper.github.io/days-since-last/last-activities.json"
+        "https://geoffreyhun-strava-edit-72.deno.dev/last"
       ).then((response) => response.json());
-      setActivities(myActivities);
+      setActivities([myActivities]);
     } catch (error) {
       console.error(error);
     }
@@ -71,11 +75,11 @@ export function App(props) {
           rel="noopener noreferrer"
         >
           Last {defaultActivity} on{" "}
-          {last && format(new Date(last?.start_date), "PPPP")}
+          {last && format(new Date(last?.start_date_local), "PPPP")}
         </a>
 
-        <h3>Other</h3>
-        {activities && (
+        {/* <h3>Other</h3> */}
+        {/* {activities && (
           <ul>
             {activities
               .filter((a) => a.type !== defaultActivity)
@@ -94,7 +98,7 @@ export function App(props) {
                 </li>
               ))}
           </ul>
-        )}
+        )} */}
       </main>
 
       <Footer />
